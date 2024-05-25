@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    margin: 0;
+    height: 100vh;
+    background: url('./assets/bg-01.jpg')
+}
