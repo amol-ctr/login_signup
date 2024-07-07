@@ -5,14 +5,25 @@ import password from '../password.png'
 import twitter from '../twitter.png'
 import facebook from '../facebook.jpg'
 import github from '../github.png'
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import Forgot_password_page from './forgot_password_page'
+// import { useNavigate } from 'react-router-dom'
 // import './phone.css'
 import './login_sign_up_components.css'
 
 function Login_sign_up_components() {
 
   const [action, setAction] = useState("LOGIN")
+
+  // const navigate = useNavigate()
+
+  // const gotToNewPage=()=>{
+  //   navigate("/forgot_password_page");
+  // }
+
   return (
     <div class='container2'>
+      
       <div className=' header'>
         <div className=' text'>{action}</div>
         {/* <br /> */}
@@ -55,7 +66,12 @@ function Login_sign_up_components() {
         </div>
 
         {action == "SIGN UP" ? <div className='forgot-password'></div> :
-          <div className='forgot-password'><a href="#">Forgot Password?</a></div>
+          
+          <div className='forgot-password'>
+            <Link to="/forgot_password_page">Forgot Password?</Link>
+
+          </div>
+
         }
 
         <button type='submit' className='submit2'>{action}</button>
